@@ -1,9 +1,11 @@
 def my_collect(array)
   if block_given?
     index = 0
+    new_array = []
     while index < array.size
-      yield(array[index])
+      new_array << yield(array[index])
       index+= 1
     end
+    new_array
   end
 end
